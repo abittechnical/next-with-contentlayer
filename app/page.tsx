@@ -1,91 +1,59 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Learn how to grow your business with our expert advice.
+          </p>
+          <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+            <article className="flex max-w-xl flex-col items-start justify-between">
+              <div className="flex items-center gap-x-4 text-xs">
+                <time dateTime="2020-03-16" className="text-gray-500">
+                  Mar 16, 2020
+                </time>
+                <a
+                  href="#"
+                  className="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"
+                >
+                  Marketing
+                </a>
+              </div>
+              <div className="group relative">
+                <h3 className="mt-3 font-heading text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <a href="#">
+                    <span className="absolute inset-0" />
+                    Boost your conversion rate
+                  </a>
+                </h3>
+                <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
+                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo
+                  necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta
+                  laboris incididunt.
+                </p>
+              </div>
+              <div className="relative mt-8 flex items-center gap-x-4">
+                <img
+                  src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                  className="h-10 w-10 rounded-full bg-gray-50"
+                />
+                <div className="text-sm leading-6">
+                  <p className="font-semibold text-gray-900">
+                    <a href="#">
+                      <span className="absolute inset-0" />
+                      Michael Foster
+                    </a>
+                  </p>
+                  <p className="text-gray-600">Co-Founder / CTO</p>
+                </div>
+              </div>
+            </article>
+            {/* More posts... */}
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }
