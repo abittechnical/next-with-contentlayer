@@ -22,14 +22,14 @@ export const runBashCommand = (command: string) =>
 export const syncContentFromGit = async (contentDir: string) => {
   const syncRun = async () => {
     // const gitUrl = 'https://github.com/vercel/next.js.git'
-    const gitUrl = process.env.GITHUB_CLI_REPO_URL
+    const gitUrl = process.env.REMOTE_GIT_CONTENT_URL
     const localRemoteContent = `${contentDir}/remote`
     await runBashCommand(`
       if [ -d  "${localRemoteContent}" ];
         then
           cd "${localRemoteContent}"; git pull;
         else
-          gh repo clone ${gitUrl} ${localRemoteContent};
+          git clone --depth 1 --single-branch  ${gitUrl} ${localRemoteContent};
       fi
     `)
   }

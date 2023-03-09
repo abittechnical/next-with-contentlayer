@@ -15,6 +15,7 @@
 # production
 /build
 .contentlayer
+pnpm-lock.yaml
 
 # misc
 .DS_Store
