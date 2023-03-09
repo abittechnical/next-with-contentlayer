@@ -1,4 +1,7 @@
+import { syncContentFromGit } from './lib/contentlayer.utils'
 import { makeSource, defineDocumentType } from 'contentlayer/source-files'
+import { makeSource as makeSourceRemote } from 'contentlayer/source-remote-files'
+import { spawn } from 'node:child_process'
 
 // Define a document type
 const Post = defineDocumentType(() => ({
@@ -24,7 +27,13 @@ const Post = defineDocumentType(() => ({
   },
 }))
 
-export default makeSource({
+// export default makeSource({
+//   contentDirPath: 'content',
+//   documentTypes: [Post],
+// })
+export default makeSourceRemote({
+  syncFiles: syncContentFromGit,
   contentDirPath: 'content',
   documentTypes: [Post],
+  disableImportAliasWarning: true,
 })
