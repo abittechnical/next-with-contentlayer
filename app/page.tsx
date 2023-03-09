@@ -1,7 +1,7 @@
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
 
-const PostCard = ({ date, title, published }) => {
+const PostCard = ({ date, title, published }: any) => {
   return (
     <article className="flex max-w-xl flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">

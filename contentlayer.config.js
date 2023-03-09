@@ -18,6 +18,10 @@ const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    published: {
+      type: 'string',
+      required: false,
+    },
   },
   computedFields: {
     slug: {
