@@ -1,11 +1,12 @@
 import { allPosts } from 'contentlayer/generated'
+import { compareDesc, format, parseISO } from 'date-fns'
 
 const PostCard = ({ date, title, published }) => {
   return (
     <article className="flex max-w-xl flex-col items-start justify-between">
       <div className="flex items-center gap-x-4 text-xs">
         <time dateTime="2020-03-16" className="text-neutralDark-10">
-          {date}
+          {format(parseISO(date), 'LLLL d, yyyy')}
         </time>
         <a
           href="#"
@@ -33,9 +34,13 @@ export default function Home() {
             Learn how to grow your business with our expert advice.
           </p>
           <div className="mt-10 space-y-16 border-t border-neutralDark-6 pt-10 sm:mt-16 sm:pt-16">
-            {allPosts.map((post, i) => (
-              <PostCard key={post.date} date={post.date} title={post.title} published={post.published ?? undefined} />
-            ))}
+            {allPosts
+              .sort((a, b) => {
+                return compareDesc(new Date(a.date), new Date(b.date))
+              })
+              .map((post, i) => (
+                <PostCard key={post.date} date={post.date} title={post.title} published={post.published ?? undefined} />
+              ))}
           </div>
         </div>
       </div>
